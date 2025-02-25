@@ -12,16 +12,38 @@ import random
 
 
 DetectionTests = {
-                'ForenSynths': { 'dataroot'   : '/opt/data/private/DeepfakeDetection/ForenSynths/',
-                                 'no_resize'  : False, # Due to the different shapes of images in the dataset, resizing is required during batch detection.
-                                 'no_crop'    : True,
-                               },
+        #         'ForenSynths': { 'dataroot'   : '/home/fanzheming/zm/NPR-DeepfakeDetection/dataset/ForenSynths8test/ForenSynths',
+        #                          'no_resize'  : False, # Due to the different shapes of images in the dataset, resizing is required during batch detection.
+        #                          'no_crop'    : True,
+        #                        },
 
-           'GANGen-Detection': { 'dataroot'   : '/opt/data/private/DeepfakeDetection/GANGen-Detection/',
-                                 'no_resize'  : True,
-                                 'no_crop'    : True,
-                               },
+        #    'GANGen-Detection': { 'dataroot'   : '/home/fanzheming/zm/NPR-DeepfakeDetection/dataset/GANGen-Detection',
+        #                          'no_resize'  : True,
+        #                          'no_crop'    : True,
+        #                        },
+        #  'Diffusion1kStep': {  # 测试集名称
+        #     'dataroot': '/home/fanzheming/zm/NPR-DeepfakeDetection/dataset/Diffusion1kStep',  # 数据根路径
+        #     'no_resize': False,  # 是否不调整大小
+        #     'no_crop': True,  # 是否不裁剪
+        # },  'DiffusionForensics': {  # 测试集名称
+        #     'dataroot': '/home/fanzheming/zm/NPR-DeepfakeDetection/dataset/DiffusionForensics8test/DiffusionForensics',  # 数据根路径
+        #     'no_resize': False,  # 是否不调整大小
+        #     'no_crop': True,  # 是否不裁剪
+        # },  
 
+        # 'UniversalFakeDetect': {  # 测试集名称
+        #     'dataroot': '/home/fanzheming/zm/NPR-DeepfakeDetection/dataset/UniversalFakeDetect',  # 数据根路径
+        #     'no_resize': False,  # 是否不调整大小
+        #     'no_crop': True,  # 是否不裁剪
+        # },   
+
+                        'genimages': {  # 测试集名称
+            'dataroot': '/home/ubuntu/genimagestest/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': True , # 是否不裁剪
+        }, 
+
+        
                  }
 
 
@@ -43,7 +65,6 @@ model.load_state_dict(torch.load(opt.model_path, map_location='cpu'), strict=Tru
 model.cuda()
 model.eval()
 
-
 for testSet in DetectionTests.keys():
     dataroot = DetectionTests[testSet]['dataroot']
     printSet(testSet)
@@ -57,6 +78,6 @@ for testSet in DetectionTests.keys():
         opt.no_crop   = DetectionTests[testSet]['no_crop']
         acc, ap, _, _, _, _ = validate(model, opt)
         accs.append(acc);aps.append(ap)
-        print("({} {:12}) acc: {:.1f}; ap: {:.1f}".format(v_id, val, acc*100, ap*100))
-    print("({} {:10}) acc: {:.1f}; ap: {:.1f}".format(v_id+1,'Mean', np.array(accs).mean()*100, np.array(aps).mean()*100));print('*'*25) 
+        print("({} {:12}) acc: {:.2f}; ap: {:.2f}".format(v_id, val, acc*100, ap*100))
+    print("({} {:10}) acc: {:.2f}; ap: {:.2f}".format(v_id+1,'Mean', np.array(accs).mean()*100, np.array(aps).mean()*100));print('*'*25) 
 

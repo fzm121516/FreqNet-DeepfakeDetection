@@ -69,3 +69,6 @@ CUDA_VISIBLE_DEVICES=0 python test.py --model_path ./4-classes-freqnet.pth  --ba
 ## Acknowledgments
 
 This repository borrows partially from the [CNNDetection](https://github.com/peterwang512/CNNDetection), [NPR](https://github.com/chuangchuangtan/NPR-DeepfakeDetection).
+
+
+CUDA_VISIBLE_DEVICES=0 python test.py --model_path ./4-classes-freqnet-v2.pth  --batch_size 128
