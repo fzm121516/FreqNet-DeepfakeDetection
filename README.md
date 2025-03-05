@@ -72,3 +72,5 @@ This repository borrows partially from the [CNNDetection](https://github.com/pet
 
 
 CUDA_VISIBLE_DEVICES=0 python test.py --model_path ./4-classes-freqnet-v2.pth  --batch_size 128
+
+CUDA_VISIBLE_DEVICES=1 python test.py --model_path ./4-classes-freqnet-v2.pth  --batch_size 128

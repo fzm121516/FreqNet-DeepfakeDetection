@@ -37,11 +37,47 @@ DetectionTests = {
         #     'no_crop': True,  # 是否不裁剪
         # },   
 
-                        'genimages': {  # 测试集名称
-            'dataroot': '/home/ubuntu/genimagestest/test',  # 数据根路径
+        #                 'genimages': {  # 测试集名称
+        #     'dataroot': '/home/ubuntu/genimagestest/test',  # 数据根路径
+        #     'no_resize': False,  # 是否不调整大小
+        #     'no_crop': True , # 是否不裁剪
+        # }, 
+
+                                        'foren95': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg95/foren/test',  # 数据根路径
             'no_resize': False,  # 是否不调整大小
-            'no_crop': True , # 是否不裁剪
-        }, 
+            'no_crop': False,  # 是否不裁剪
+        },    
+
+                                'foren85': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg85/foren/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': False,  # 是否不裁剪
+        },    
+                                'foren75': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg75/foren/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': False,  # 是否不裁剪
+        },    
+
+
+                                        'unifd95': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg95/unifd/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': False,  # 是否不裁剪
+        },  
+
+                                'unifd85': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg85/unifd/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': False,  # 是否不裁剪
+        },    
+
+                        'unifd75': {  # 测试集名称
+            'dataroot': '/home/ubuntu/jpeg/jpeg75/unifd/test',  # 数据根路径
+            'no_resize': False,  # 是否不调整大小
+            'no_crop': False,  # 是否不裁剪
+        },   
 
         
                  }
